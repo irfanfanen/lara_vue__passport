@@ -11,8 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::post('signup', 'AuthController@signup');
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{vue_capture?}', function () {
+    return view('admin');
+})->where('vue_capture', '[\/\w\.-]*');
